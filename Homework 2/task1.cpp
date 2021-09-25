@@ -1,11 +1,14 @@
 #include <iostream>
 #include <vector>
+#include <sstream>
 
 int main() {
 
+
+
     // different compile results of STL container!
 
-    std::vector<bool> v{};
+    //std::vector<bool> v{};
 
     /* due to optimization, bool container uses one bit for each element
      * to address bits, special object is used
@@ -21,15 +24,21 @@ int main() {
 
     // this one compiles perfectly as auto&& binds to rvalue
     // компилируется, поскольку auto&& -- rvalue.
-    for (auto&& x : v)
+    /*for (auto&& x : v)
     {
         std::cout << x << std::endl;
-    }
+    }*/
     // this one does not compile as auto& binds to lvalue
     // не компилируется, так как присутствует неконстантная ссылка на временный объект
-    for (auto& x: v)
+    /*for (auto& x: v)
     {
         std::cout << x << std::endl;
-    }
+    }*/
+    std::stringstream ss;
+    ss << "22";
+    int k = 0;
+    ss >> k;
+    std::cout << k << std::endl;
+    return 0;
 }
 

@@ -9,4 +9,5 @@ add_executable(Homework_5
         RandomNumber.h
         RandomNumber.cpp
         factory.h
-        factory.cpp)
+        factory.cpp
+        main.cpp)

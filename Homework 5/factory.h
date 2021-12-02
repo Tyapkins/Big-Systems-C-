@@ -3,6 +3,8 @@
 
 #include <memory>
 #include <vector>
+#include <map>
+#include <algorithm>
 #include "RandomNumber.h"
 
 class TFactory {
@@ -17,5 +19,8 @@ public:
 
     std::vector<std::string> GetAvailableObjects() const;
 };
+
+template <typename T>
+std::pair<double, double> check_distrib(const std::string& name, T par, int iter_num = 10000);
 
 #endif //HOMEWORK_5_FACTORY_H

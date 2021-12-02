@@ -11,10 +11,11 @@ class TFactory {
 public:
     TFactory();
     ~TFactory();
-    [[nodiscard]] std::unique_ptr<TRandomNumberGenerator> CreateObject(
+    std::unique_ptr<TRandomNumberGenerator> CreateObject(
             const std::string& name,
             const std::any& pars) const;
-    [[nodiscard]] std::vector<std::string> GetAvailableObjects() const;
+
+    std::vector<std::string> GetAvailableObjects() const;
 };
 
 #endif //HOMEWORK_5_FACTORY_H

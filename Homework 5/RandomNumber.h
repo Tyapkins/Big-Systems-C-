@@ -25,8 +25,8 @@ class PoissonNumberGenerator : public TRandomNumberGenerator {
 
     public:
         explicit PoissonNumberGenerator(std::any par);
-        virtual double Generate() const override;
-        virtual double GetMean() const override {return num;}
+        double Generate() const override;
+        double GetMean() const override {return num;}
 };
 
 
@@ -37,8 +37,8 @@ class BernoulliNumberGenerator : public TRandomNumberGenerator {
 
     public:
         explicit BernoulliNumberGenerator(std::any num);
-        virtual double Generate() const override;
-        virtual double GetMean() const override {return num;}
+        double Generate() const override;
+        double GetMean() const override {return num;}
 };
 
 
@@ -49,8 +49,8 @@ class GeometricNumberGenerator : public TRandomNumberGenerator {
 
     public:
         explicit GeometricNumberGenerator(std::any num);
-        virtual double Generate() const override;
-        virtual double GetMean() const override {return 1/num - 1;}
+        double Generate() const override;
+        double GetMean() const override {return 1/num - 1;}
 };
 
 
@@ -61,6 +61,6 @@ class FiniteNumberGenerator : public TRandomNumberGenerator {
 
 public:
     explicit FiniteNumberGenerator(std::any nums);
-    virtual double Generate() const override;
-    virtual double GetMean() const override {return std::inner_product(values.begin(), values.end(), poss.begin(), 0.0);}
+    double Generate() const override;
+    double GetMean() const override {return std::inner_product(values.begin(), values.end(), poss.begin(), 0.0);}
 };
